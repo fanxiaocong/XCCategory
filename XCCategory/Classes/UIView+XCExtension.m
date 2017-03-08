@@ -10,6 +10,8 @@
 
 #import "UIImage+XCExtension.h"
 
+#import <objc/objc-runtime.h>
+
 @implementation UIView (XCExtension)
 
 - (CGFloat)cornerRadius
@@ -154,6 +156,51 @@
 {
     return [UIImage imageFromCaptureView:self];
 }
+
+
+- (UIViewController *)viewController
+{
+    UIResponder *nextResponder = [self nextResponder];
+    
+    while (nextResponder)
+    {
+        if ([nextResponder isKindOfClass:[UIViewController class]])
+        {
+            return (UIViewController *)nextResponder;
+        }
+    }
+    
+    return nil;
+}
+
+- (void)setTapGestureHandle:(void (^)(UITapGestureRecognizer *, UIView *))tapGestureHandle
+{
+    self.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapHandle:)];
+    
+    [self addGestureRecognizer:tapGesture];
+    
+    objc_setAssociatedObject(self, @selector(tapGestureHandle), tapGestureHandle, OBJC_ASSOCIATION_COPY);
+}
+
+- (void (^)(UITapGestureRecognizer *, UIView *))tapGestureHandle
+{
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+
+
+- (void)didTapHandle:(UITapGestureRecognizer *)tap
+{
+    void (^tapGestureHandle)(UITapGestureRecognizer *tap, UIView *tapView) = objc_getAssociatedObject(self, @selector(tapGestureHandle));
+    
+    if (tapGestureHandle)
+    {
+        tapGestureHandle(tap, tap.view);
+    }
+}
+
+
 
 @end
 

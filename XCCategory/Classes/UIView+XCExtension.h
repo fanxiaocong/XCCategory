@@ -57,6 +57,16 @@ IB_DESIGNABLE
 /** 👀 当前视图的截图 👀 */
 @property (strong, nonatomic, readonly) UIImage *snapshotImage;
 
+/**
+ *   返回当前视图的下一级控制器，可能为空
+ */
+@property (nullable, nonatomic, readonly) UIViewController *viewController;
+
+/**
+ *  手势事件
+ */
+@property (nullable, copy, nonatomic) void(^tapGestureHandle)(UITapGestureRecognizer * _Nullable gesture, UIView * _Nullable tapView);
+
 
 @end
 
