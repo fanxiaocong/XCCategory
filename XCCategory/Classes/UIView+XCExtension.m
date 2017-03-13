@@ -26,11 +26,11 @@
     self.layer.cornerRadius = cornerRadius;
 }
 
-
 - (UIColor *)borderColor
 {
     return [UIColor colorWithCGColor:self.layer.borderColor];
 }
+
 
 - (void)setBorderColor:(UIColor *)borderColor
 {

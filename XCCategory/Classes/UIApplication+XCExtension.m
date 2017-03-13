@@ -14,6 +14,16 @@
 
 #import "UIApplication+XCExtension.h"
 
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <Photos/Photos.h>
+
+#import <AddressBook/AddressBook.h>
+#import <Contacts/Contacts.h>
+
+
+#define iOS8_OR_LATER ([UIDevice currentDevice].systemVersion.floatValue >= 8.0)
+#define iOS9_OR_LATER ([UIDevice currentDevice].systemVersion.floatValue >= 9.0)
+
 @implementation UIApplication (XCExtension)
 
 /** 👀 沙盒中 Documents 的全路径 👀 */
@@ -75,6 +85,86 @@
 {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:key];
 }
+
+/* 🐖 ***************************** 🐖 华丽的分隔线 🐖 *****************************  🐖 */
+
+- (BOOL)canUsePhotoAlbum
+{
+    if (iOS9_OR_LATER)
+    {
+        PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+        return (status == PHAuthorizationStatusAuthorized   ||
+                status == PHAuthorizationStatusNotDetermined);
+    }
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    ALAuthorizationStatus status = [ALAssetsLibrary authorizationStatus];
+    return (status == ALAuthorizationStatusAuthorized  ||
+            status == ALAuthorizationStatusNotDetermined);
+#pragma clang diagnostic pop
+    
+    return NO;
+}
+
+- (BOOL)canUseCamera
+{
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    return (status == AVAuthorizationStatusNotDetermined    ||
+            status == AVAuthorizationStatusAuthorized);
+}
+
+- (BOOL)canUseAudio
+{
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
+    return (status == AVAuthorizationStatusNotDetermined    ||
+            status == AVAuthorizationStatusAuthorized);
+}
+
+- (BOOL)canUseAddressBook
+{
+    if (iOS9_OR_LATER)
+    {
+        CNAuthorizationStatus status = [CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts];
+        return (status == CNAuthorizationStatusAuthorized   ||
+                status == CNAuthorizationStatusNotDetermined);
+    }
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    ABAuthorizationStatus status = ABAddressBookGetAuthorizationStatus();
+    return (status == kABAuthorizationStatusAuthorized  ||
+            status == kABAuthorizationStatusNotDetermined);
+#pragma clang diagnostic pop
+}
+
+/* 🐖 ***************************** 🐖 Method 🐖 *****************************  🐖 */
+
+/**
+ 播放系统声音
+ */
+- (void)playSystemSound
+{
+    AudioServicesPlaySystemSound(1007);
+}
+
+/**
+ 振动
+ */
+- (void)vibrate
+{
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+}
+
+/**
+ 播放声音和振动
+ */
+- (void)playSoundAndVibrate
+{
+    [self playSystemSound];
+    [self vibrate];
+}
+
 
 @end
 

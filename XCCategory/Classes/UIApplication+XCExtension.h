@@ -37,9 +37,42 @@
 /** 👀 App 的 appBundleShortVersion(Version 版本号) 👀 */
 @property (copy, nonatomic, readonly) NSString *appBundleShortVersion;
 
-
 /** 👀 App 的展示名称 👀 */
 @property (copy, nonatomic, readonly) NSString *appDisplayName;
 
+
+/* 🐖 ***************************** 🐖 华丽的分隔线 🐖 *****************************  🐖 */
+
+/** 👀 是否能使用相册 👀 */
+@property (assign, nonatomic, readonly) BOOL canUsePhotoAlbum;
+
+/** 👀 是否能使用相机 👀 */
+@property (assign, nonatomic, readonly) BOOL canUseCamera;
+
+/** 👀 是否能访问麦克风 👀 */
+@property (assign, nonatomic, readonly) BOOL canUseAudio;
+
+/** 👀 是否能访问通讯录 👀 */
+@property (assign, nonatomic, readonly) BOOL canUseAddressBook;
+
+
+/* 🐖 ***************************** 🐖 Method 🐖 *****************************  🐖 */
+
+/**
+ 播放系统声音
+ */
+- (void)playSystemSound;
+
+
+/**
+ 振动
+ */
+- (void)vibrate;
+
+
+/**
+ 播放声音和振动
+ */
+- (void)playSoundAndVibrate;
 
 @end

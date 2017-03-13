@@ -16,7 +16,8 @@ IB_DESIGNABLE
 /** 👀 边框宽度 👀 */
 @property (assign, nonatomic) IBInspectable CGFloat borderWidth;
 /** 👀 边框颜色 👀 */
-@property (weak, nonatomic) IBInspectable UIColor *borderColor;
+@property (nullable, weak, nonatomic) UIColor *borderColor;
+
 
 
 /* 🐖 ***************************** 🐖 华丽的分隔线 🐖 *****************************  🐖 */
@@ -55,7 +56,7 @@ IB_DESIGNABLE
 /* 🐖 ***************************** 🐖 华丽的分隔线 🐖 *****************************  🐖 */
 
 /** 👀 当前视图的截图 👀 */
-@property (strong, nonatomic, readonly) UIImage *snapshotImage;
+@property (nullable, strong, nonatomic, readonly) UIImage *snapshotImage;
 
 /**
  *   返回当前视图的下一级控制器，可能为空
