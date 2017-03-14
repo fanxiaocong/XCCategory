@@ -126,9 +126,11 @@
 {
     if (self.maxTextCount && self.text.length > self.maxTextCount && self.markedTextRange == nil)
     {
-        self.text = [self.text substringWithRange: NSMakeRange(0, self.maxTextCount + 1)];
-        
-        [self deleteBackward];
+//        self.text = [self.text substringWithRange: NSMakeRange(0, self.maxTextCount + 1)];
+//        
+//        [self deleteBackward];
+//        
+        self.text = [self.text substringToIndex:NSMaxRange([self.text rangeOfComposedCharacterSequenceAtIndex:self.maxTextCount-1])];
     }
     
     if (self.textDidChange)
