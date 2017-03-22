@@ -20,4 +20,10 @@
  */
 + (NSString *)stringWithIP;
 
+
+/**
+ *  将数字字符串按照千位分隔，并保留两位小数：1999.33 ---> 1,999.33；1009 ---> 1009.00
+ */
+- (NSString *)thousandSeparatorString;
+
 @end
