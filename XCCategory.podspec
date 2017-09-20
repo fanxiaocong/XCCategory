@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "XCCategory"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "常用分类"
 
   s.description  = "常用分类整理"
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/fanxiaocong/XCCategory.git", :tag => s.version }
 
 
-  s.source_files  = "XCCategory"
+  s.source_files  = "XCCategory/**/*.{h,m}"
   s.requires_arc = true
 
 end
