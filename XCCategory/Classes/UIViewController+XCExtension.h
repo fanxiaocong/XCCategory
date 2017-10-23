@@ -13,10 +13,11 @@
 /**
  *  根据 StoryBoardID 和 控制器ID 实例化一个 控制器
  *
- *  @param storyBoardID     storyBoardID
+ *  @param storyBoardName   storyBoard名称
  *  @param viewcontrollerID 控制器ID
  */
-+ (instancetype)viewcontrollerWithStoryBoardID:(NSString *)storyBoardID viewcontrollerID:(NSString *)viewcontrollerID;
++ (instancetype)viewcontrollerWithStoryBoardName:(NSString *)storyBoardName
+                                viewcontrollerID:(NSString *)viewcontrollerID;
 
 
 @end
