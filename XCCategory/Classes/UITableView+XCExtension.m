@@ -8,7 +8,17 @@
 
 #import "UITableView+XCExtension.h"
 
+
 @implementation UITableView (XCExtension)
+
+- (void)setHideFooter:(BOOL)hideFooter
+{
+    if (hideFooter)
+    {
+        /// 隐藏 footerView
+        self.tableFooterView = [UIView new];
+    }
+}
 
 /**
  *  将 tableView 滚动到指定的位置

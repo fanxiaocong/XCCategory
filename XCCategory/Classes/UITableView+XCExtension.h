@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
 @interface UITableView (XCExtension)
+
+/** 👀 隐藏 footerView 👀 */
+@property (assign, nonatomic) IBInspectable BOOL hideFooter;
 
 /**
  *  将 tableView 滚动到指定的位置
