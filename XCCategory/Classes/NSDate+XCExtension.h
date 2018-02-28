@@ -38,4 +38,39 @@
  */
 - (NSDateComponents *)deltaWithNow;
 
+/**
+ *  返回 years 年之后的时间
+ */
+- (NSDate *)dateByAddingYears:(NSInteger)years;
+
+/**
+ *  返回 months 月之后的时间
+ */
+- (NSDate *)dateByAddingMonths:(NSInteger)months;
+
+/**
+ *  返回 weeks 周之后的时间
+ */
+- (NSDate *)dateByAddingWeeks:(NSInteger)weeks;
+
+/**
+ *  返回 days 天之后的时间
+ */
+- (NSDate *)dateByAddingDays:(NSInteger)days;
+
+/**
+ *  返回 hours 小时之后的时间
+ */
+- (NSDate *)dateByAddingHours:(NSInteger)hours;
+
+/**
+ *  返回 minutes 分钟之后的时间
+ */
+- (NSDate *)dateByAddingMinutes:(NSInteger)minutes;
+
+/**
+ *  返回 seconds 秒之后的时间
+ */
+- (NSDate *)dateByAddingSeconds:(NSInteger)seconds;
+
 @end

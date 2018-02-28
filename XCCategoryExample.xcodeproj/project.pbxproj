@@ -34,6 +34,9 @@
 		1E100FD91E67D8C900C3A1B9 /* UITextView+XCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E100FC31E67D8C900C3A1B9 /* UITextView+XCExtension.m */; };
 		1E100FDA1E67D8C900C3A1B9 /* UIView+XCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E100FC51E67D8C900C3A1B9 /* UIView+XCExtension.m */; };
 		1E100FDB1E67D8C900C3A1B9 /* UIViewController+XCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E100FC71E67D8C900C3A1B9 /* UIViewController+XCExtension.m */; };
+		1E680EBF20464DB000F69A8B /* NSArray+XCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E680EBE20464DB000F69A8B /* NSArray+XCExtension.m */; };
+		1E680EC62046807500F69A8B /* NSDictionary+XCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E680EC52046807500F69A8B /* NSDictionary+XCExtension.m */; };
+		1E680EC92046A43E00F69A8B /* NSTimer+XCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E680EC82046A43E00F69A8B /* NSTimer+XCExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +112,12 @@
 		1E100FC61E67D8C900C3A1B9 /* UIViewController+XCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XCExtension.h"; sourceTree = "<group>"; };
 		1E100FC71E67D8C900C3A1B9 /* UIViewController+XCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XCExtension.m"; sourceTree = "<group>"; };
 		1E100FC81E67D8C900C3A1B9 /* XCCategoryHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCCategoryHeader.h; sourceTree = "<group>"; };
+		1E680EBD20464DB000F69A8B /* NSArray+XCExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+XCExtension.h"; sourceTree = "<group>"; };
+		1E680EBE20464DB000F69A8B /* NSArray+XCExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+XCExtension.m"; sourceTree = "<group>"; };
+		1E680EC42046807500F69A8B /* NSDictionary+XCExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+XCExtension.h"; sourceTree = "<group>"; };
+		1E680EC52046807500F69A8B /* NSDictionary+XCExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+XCExtension.m"; sourceTree = "<group>"; };
+		1E680EC72046A43E00F69A8B /* NSTimer+XCExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+XCExtension.h"; sourceTree = "<group>"; };
+		1E680EC82046A43E00F69A8B /* NSTimer+XCExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+XCExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +220,12 @@
 		1E100FA11E67D8C900C3A1B9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1E680EBD20464DB000F69A8B /* NSArray+XCExtension.h */,
+				1E680EBE20464DB000F69A8B /* NSArray+XCExtension.m */,
+				1E680EC42046807500F69A8B /* NSDictionary+XCExtension.h */,
+				1E680EC52046807500F69A8B /* NSDictionary+XCExtension.m */,
+				1E680EC72046A43E00F69A8B /* NSTimer+XCExtension.h */,
+				1E680EC82046A43E00F69A8B /* NSTimer+XCExtension.m */,
 				1E100FA21E67D8C900C3A1B9 /* CALayer+XCExtension.h */,
 				1E100FA31E67D8C900C3A1B9 /* CALayer+XCExtension.m */,
 				1E100FA41E67D8C900C3A1B9 /* NSAttributedString+XCExtension.h */,
@@ -394,12 +409,14 @@
 				1E100FD51E67D8C900C3A1B9 /* UIImage+XCExtension.m in Sources */,
 				1E100F391E67D7B400C3A1B9 /* ViewController.m in Sources */,
 				1E100FD41E67D8C900C3A1B9 /* UIControl+XCExtension.m in Sources */,
+				1E680EBF20464DB000F69A8B /* NSArray+XCExtension.m in Sources */,
 				1E100FCA1E67D8C900C3A1B9 /* NSAttributedString+XCExtension.m in Sources */,
 				1E100FCD1E67D8C900C3A1B9 /* NSObject+XCExtension.m in Sources */,
 				1E100F361E67D7B400C3A1B9 /* AppDelegate.m in Sources */,
 				1E100FDB1E67D8C900C3A1B9 /* UIViewController+XCExtension.m in Sources */,
 				1E100F331E67D7B400C3A1B9 /* main.m in Sources */,
 				1E100FCE1E67D8C900C3A1B9 /* NSString+XCExtension.m in Sources */,
+				1E680EC92046A43E00F69A8B /* NSTimer+XCExtension.m in Sources */,
 				1E100FD71E67D8C900C3A1B9 /* UITableView+XCExtension.m in Sources */,
 				1E100FDA1E67D8C900C3A1B9 /* UIView+XCExtension.m in Sources */,
 				1E100FD61E67D8C900C3A1B9 /* UIScrollView+XCExtension.m in Sources */,
@@ -408,6 +425,7 @@
 				1E100FCF1E67D8C900C3A1B9 /* UIApplication+XCExtension.m in Sources */,
 				1E100FD31E67D8C900C3A1B9 /* UIColor+XCExtension.m in Sources */,
 				1E100FD01E67D8C900C3A1B9 /* UIBarButtonItem+XCExtension.m in Sources */,
+				1E680EC62046807500F69A8B /* NSDictionary+XCExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

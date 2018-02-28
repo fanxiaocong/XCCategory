@@ -15,6 +15,8 @@
 #import "NSNumber+XCExtension.h"
 #import "NSObject+XCExtension.h"
 #import "NSString+XCExtension.h"
+#import "NSArray+XCExtension.h"
+#import "NSDictionary+XCExtension.h"
 #import "UIApplication+XCExtension.h"
 #import "UIBarButtonItem+XCExtension.h"
 #import "UIBezierPath+XCExtension.h"

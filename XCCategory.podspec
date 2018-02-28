@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "XCCategory"
-  s.version      = "1.0.7"
+  s.version      = "1.0.8"
   s.summary      = "常用分类"
   s.platform     = :ios, '8.3'
 

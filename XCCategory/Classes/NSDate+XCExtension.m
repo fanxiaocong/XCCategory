@@ -74,4 +74,77 @@
     return [calendar components:unit fromDate:self toDate:[NSDate date] options:0];
 }
 
+/**
+ *  返回 years 年之后的时间
+ */
+- (NSDate *)dateByAddingYears:(NSInteger)years
+{
+    NSCalendar *calendar =  [NSCalendar currentCalendar];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setYear:years];
+    return [calendar dateByAddingComponents:components toDate:self options:0];
+}
+
+/**
+ *  返回 months 月之后的时间
+ */
+- (NSDate *)dateByAddingMonths:(NSInteger)months
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setMonth:months];
+    return [calendar dateByAddingComponents:components toDate:self options:0];
+}
+
+/**
+ *  返回 weeks 周之后的时间
+ */
+- (NSDate *)dateByAddingWeeks:(NSInteger)weeks
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setWeekOfYear:weeks];
+    return [calendar dateByAddingComponents:components toDate:self options:0];
+}
+
+/**
+ *  返回 days 天之后的时间
+ */
+- (NSDate *)dateByAddingDays:(NSInteger)days
+{
+    NSTimeInterval aTimeInterval = [self timeIntervalSinceReferenceDate] + 86400 * days;
+    NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
+    return newDate;
+}
+
+/**
+ *  返回 hours 小时之后的时间
+ */
+- (NSDate *)dateByAddingHours:(NSInteger)hours
+{
+    NSTimeInterval aTimeInterval = [self timeIntervalSinceReferenceDate] + 3600 * hours;
+    NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
+    return newDate;
+}
+
+/**
+ *  返回 minutes 分钟之后的时间
+ */
+- (NSDate *)dateByAddingMinutes:(NSInteger)minutes
+{
+    NSTimeInterval aTimeInterval = [self timeIntervalSinceReferenceDate] + 60 * minutes;
+    NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
+    return newDate;
+}
+
+/**
+ *  返回 seconds 秒之后的时间
+ */
+- (NSDate *)dateByAddingSeconds:(NSInteger)seconds
+{
+    NSTimeInterval aTimeInterval = [self timeIntervalSinceReferenceDate] + seconds;
+    NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
+    return newDate;
+}
+
 @end
